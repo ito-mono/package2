@@ -24,12 +24,12 @@ jobs:
         with:
           node-version: "20"
           registry-url: https://npm.pkg.github.com
-      # - name: Install → ビルドを行うためdevDependenciesもインストールする
-      #   working-directory: dev
-      #   run: npm install
-      # - name: Build
-      #   working-directory: dev
-      #   run: npm run build
+      - name: Install → ビルドを行うためdevDependenciesもインストールする
+        working-directory: dev
+        run: npm install
+      - name: Build
+        working-directory: dev
+        run: npm run build
       - name: publish npm package
         run: ls -la && ls -la dist && npm publish
         env:
